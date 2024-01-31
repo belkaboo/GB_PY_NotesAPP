@@ -1,5 +1,6 @@
 import json
 import datetime
+import sys
 
 
 def save_notes(notes, filename):
@@ -92,6 +93,7 @@ def main():
         print("5. Filter Notes by Date")
         print("6. Print All Notes")
         print("7. Save and Quit")
+        print("8. Quit without saving")
         choice = input("Enter the number of your choice: ")
 
         if choice == '1':
@@ -109,8 +111,11 @@ def main():
             print_notes(notes)
         elif choice == '7':
             save_notes(notes, filename)
-            print("Notes saved.")
+            print("Notes saved. Good bye!")
             break
+        elif choice == '8':
+            print("Good bye!")
+            sys.exit()              
         else:
             print("Invalid choice. Try again.")
 
